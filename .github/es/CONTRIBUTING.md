@@ -1,21 +1,17 @@
-> TODO: English version
+# Contribuir a Asamblea Tracker
 
-# Contribuir a Asamblea Viewer
-
-¡Gracias! Muchísimas gracias por tu interés en contribuir.
+Muchísimas gracias por el interés en contribuir.
 
 ## Proceso de desarrollo
 
-Uso Github para recibir reportes de issues y organizar propuestas de mejorars, también para aceptar Pull Requests.
+Uso Github para recibir reportes de issues y organizar propuestas de mejoras.
 
 ## Pull Requests
 
-Tus Pull Request son bienvenidas.
+Cualquier Pull Request es bienvenidas.
 
-1. Crea un Fork del repositorio y crea tu rama desde master `master`.
-2. Si añadiste código que debería ser testeado, por favor añade los tests.
-3. Si añades tests, asegurate que todos pasen exitosamente.
-4. (Recomendado) Si utilizas Visual Studio Code, asegurate de implementar el fichero `settings.json` incluído en el folder `.vscode`. Si no, por favor utiliza 4 espacios cómo tabs.
+1. Crea un Fork del repositorio y crea tu rama desde `master`.
+2. (Recomendado) Si utilizas Visual Studio Code, asegurate de implementar el fichero `settings.json` incluído en el folder `.vscode`. Si no, por favor utiliza 4 espacios cómo tabs.
 
 ## Guía de estilos para Git
 
@@ -34,5 +30,3 @@ Para el mensaje, inicia con un verbo en presente y sé lo más conciso posible. 
 ## Estilo de Código
 
 -   4 spaces for indentation rather than tabs
--   80 character line length
--   Run `npm run lint` to conform to our lint rules

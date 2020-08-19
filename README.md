@@ -1,41 +1,74 @@
 # Asamblea Tracker
 
-> Puedes acceder a la versión temprana de la plataforma haciendo click en este [enlace](http://asamblea-tracker.mariomenjr.com/).
+> Puedes acceder a la plataforma mientras se construye haciendo click en el siguiente [enlace](http://asamblea-tracker.mariomenjr.com/).
 
-## Pre-requisitos
+## Requisitos
 
--   Node v10.16+
--   NPM v6.9.0+
--   MongoDB Server, consíguelo [aquí](https://fastdl.mongodb.org/win32/mongodb-win32-x86_64-2012plus-4.2.2-signed.msi) (Recomiendo abrir una cuenta en [mlab.com](mlab.com), para facilitar las cosas)
+-   nodejs v10.16+
+-   npm v6.9.0+
+-   mongodb (Recomiendo abrir una cuenta en [mlab.com](mlab.com), para facilitar las cosas)
 
 > Es requerido crear una base de datos, más no las colecciones. De eso se encargará el sistema.
 
 ## Instalación
 
-    $ git clone https://github.com/mariomenjr/asamblea-tracker.git
-    $ cd asamblea-tracker
-    $ npm install
+```bash
+$ git clone https://github.com/mariomenjr/asamblea-tracker.git
+$ cd asamblea-tracker
+$ npm install
+```
 
-## Desarrollo
+## Variables de entorno
 
-Una vez tengas creada la base de datos (otra vez, no es necesario que crees ninguna collección. El sistema se encargará de ello automáticamente), debes crear un archivo .env, en el root del proyecto, con las siguientes variables:
+Debes crear un archivo .env, en el root del proyecto, con las siguientes variables:
 
-    // .env
-    MONGO_USER=nombre_de_usuario_a_db
-    MONGO_PASS=password_de_usuario_a_db
-    MONGO_DB=nombre_de_db
-    MONGO_HOST=host_name_o_dirección_ip
-    MONGO_PORT=puerto_de_mongo
+```text
+MONGO_USER=usuario
+MONGO_PASS=password
+MONGO_DB=nombre_base_datos
+MONGO_HOST=host_name_o_dirección_ip
+MONGO_PORT=puerto_de_mongo
+```
 
-Ya que tienes la base de datos lista, puedes simplemente ejecutar:
+## Ejecución
 
-    $ npm run dev
+Este sistema consta de dos partes. La parte de línea de comandos, la qué se encarga de scrapear la información, y la parte web dónde se presenta la información.
+
+### CLI
+
+Se encarga de scrapear la información de perfil de los diputados:
+
+```bash
+$ npm run scrape
+```
+
+Se encarga de scrapear las listas de asistencia (archivos PDFs) y ponderar la asistencia:
+
+```bash
+$ npm run scrape agenda
+```
+
+### Web
+
+```bash
+$ npm run dev:client
+```
+
+### Atajo
+
+Al ejecutar el comando:
+
+```bash
+$ npm run dev
+```
+
+Estamos ejecutando el _scrape_ de perfil y el _dev:client_. Cómo puedes ver en la imagen:
 
 ![npm run dev](./assets/npm.run.dev.png)
 
 ### Depuración
 
-Por otro lado, si usás Visual Studio Code, puedes tomar ventaja de las opciones de depuración pre-configurada.
+Para la sección de línea de comandos (la encargada de hacer scraping), he dejado dos acciones en de depuración.
 
 ![npm run dev](./assets/debug.tools.png)
 
@@ -47,8 +80,8 @@ Si eres desarrollador y quieres aportar al proyecto, muchas gracias, cualquier a
 
 ## Enlaces
 
--   👀 [Platform Preview](http://asamblea-tracker.mariomenjr.com/)
--   😊 [Tweet hi!](https://twitter.com/mariomenjr)
+-   [Platform Preview](http://asamblea-tracker.mariomenjr.com/)
+-   [Tweet hi!](https://twitter.com/mariomenjr)
 -   🌎 [Asamblea Legislativa: Diputado/as](https://www.asamblea.gob.sv/diputados)
 
 ## Licencia
