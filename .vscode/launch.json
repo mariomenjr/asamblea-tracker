@@ -19,31 +19,6 @@
             "env": {
                 "NODE_ENV": "development"
             }
-        },
-        {
-            "type": "firefox",
-            "request": "launch",
-            "name": "Next: Chrome",
-            "url": "http://localhost:3000",
-            "webRoot": "${workspaceFolder}"
-        },
-        {
-            "type": "node",
-            "request": "launch",
-            "name": "Next: Node",
-            "program": "${workspaceFolder}/app.js",
-            "port": 9229,
-            "env": {
-                "NODE_OPTIONS": "--inspect"
-            },
-            "console": "integratedTerminal",
-            "trace": true
-        }
-    ],
-    "compounds": [
-        {
-            "name": "Next: Stack",
-            "configurations": ["Next: Node", "Next: Chrome"]
         }
     ]
 }
