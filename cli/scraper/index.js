@@ -1,6 +1,6 @@
 require("dotenv").config();
 const mongoose = require("mongoose");
-const scrappity = require("scrappity");
+const modelscrape = require("modelscrape");
 
 const { VALID_ARGS, COMPARING } = require("./config");
 const args = require("./args");
@@ -47,12 +47,14 @@ connectDatabase()
             case VALID_ARGS.DEFAULT:
                 await resetCollections();
 
-                const congressResult = (await scrappity(congressScraper))[0][0];
+                const congressResult = (
+                    await modelscrape(congressScraper)
+                )[0][0];
                 const { members } = await congressController.fillCongress(
                     congressResult
                 );
 
-                const partyResult = (await scrappity(partyScraper))[0][0];
+                const partyResult = (await modelscrape(partyScraper))[0][0];
                 const parties = await partyController.fillParties(partyResult);
 
                 const profsResult = await Promise.all(
@@ -61,7 +63,7 @@ connectDatabase()
                         _profileScraper.queryObjects[0].endpoint =
                             member.profileEndpoint;
 
-                        return scrappity(profileScraper);
+                        return modelscrape(profileScraper);
                     })
                 );
 
@@ -111,7 +113,7 @@ connectDatabase()
                 for (const plenary of plenaries) {
                     try {
                         if (plenary.attendanceEndpoint === undefined) {
-                            const awaited = await scrappity({
+                            const awaited = await modelscrape({
                                 ...attendanceScraper,
                                 queryObjects: [
                                     {

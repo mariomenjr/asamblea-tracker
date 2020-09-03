@@ -1,6 +1,6 @@
 {
     "name": "asamblea-tracker",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "¡Vamos a auditar el trabajo de nuestros representantes!",
     "main": "app.js",
     "scripts": {
@@ -25,12 +25,12 @@
         "@zeit/next-css": "^1.0.1",
         "axios": "^0.19.2",
         "dotenv": "^8.2.0",
+        "modelscrape": "^1.0.4",
         "mongoose": "^5.7.7",
         "next": "^9.4.2",
         "pdfjs-dist": "^2.2.228",
         "react": "^16.11.0",
         "react-dom": "^16.11.0",
-        "scrappity": "^1.0.3",
         "string-similarity": "^4.0.1"
     },
     "devDependencies": {
