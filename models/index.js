@@ -12,13 +12,17 @@ const connectDatabase = () => {
         MONGO_USER,
         MONGO_PASS,
         MONGO_HOST,
-        MONGO_PORT,
         MONGO_DB,
+        MONGO_AUTH_MECHANISM,
     } = process.env;
 
     return mongoose.connect(
-        `mongodb://${MONGO_USER}:${MONGO_PASS}@${MONGO_HOST}:${MONGO_PORT}/${MONGO_DB}`,
-        { useNewUrlParser: true, useUnifiedTopology: true }
+        `mongodb+srv://${MONGO_USER}:${MONGO_PASS}@${MONGO_HOST}/${MONGO_DB}?retryWrites=true&w=majority`,
+        {
+            useNewUrlParser: true,
+            useUnifiedTopology: true,
+            authMechanism: MONGO_AUTH_MECHANISM || `SCRAM-SHA-1`,
+        }
     );
 };
 
