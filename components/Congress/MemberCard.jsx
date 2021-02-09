@@ -49,12 +49,12 @@ export default function MemberCard({ deputy, attendance, asambleaBaseUrl }) {
                     {/* Member name */}
                     <div className="w-full" title={"Nombre completo"}>
                         <MemberCardProp
-                            title={`Tasa de asistencia (${attendanceStats.present}/${attendanceStats.total})`}
+                            title={`Tasa de asistencia (${attendanceStats.present}/${attendanceStats.total}) (Solo sesiones ordinarias)`}
                         >
                             <span className="text-xs">
                                 {isNaN(attendaceRate.toFixed())
                                     ? `Calculando asistencia...`
-                                    : `${attendaceRate.toFixed()}% de asistencia`}
+                                    : `${attendaceRate.toFixed()}% de asistencia (ordinarias)`}
                             </span>
                         </MemberCardProp>
                         <div className="text-gray-900 font-medium text-xl leading-tight">

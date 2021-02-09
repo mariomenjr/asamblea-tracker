@@ -45,12 +45,12 @@ const orderOptions = [
     },
     {
         by: "firstPeriodOn",
-        label: "Mayor tiempo como congresista",
+        label: "Mayor tiempo desde primer término",
         direction: true,
     },
     {
         by: "firstPeriodOn",
-        label: "Menor tiempo como congresista",
+        label: "Menor tiempo desde primer término",
         direction: false,
     },
 ];
