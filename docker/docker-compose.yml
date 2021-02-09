@@ -1,15 +1,20 @@
 version: "3.1"
 services:
     app:
+        user: node
         container_name: asamblea-tracker
         build:
             context: ./../
+            args:
+                - UNAME=${AT_USER}
+                - UID=${AT_UID}
+                - GID=${AT_GID}
             dockerfile: docker/${DOCKERFILE}
         environment:
             - PORT=${PORT}
         ports:
             - ${PORT}:${PORT}
         volumes:
-            - /usr/src/app/node_modules
-            - /usr/src/app/.next
-            - ./../:/usr/src/app
+            - /home/node/app/node_modules
+            - /home/node/app/.next
+            - ./../:/home/node/app
