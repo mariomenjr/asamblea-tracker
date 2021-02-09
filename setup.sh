@@ -32,7 +32,7 @@ else
         if [ $COMPOSE = true ]
         then
             # docker-compose -f docker/docker-compose.yml config
-            docker-compose -f ./docker/docker-compose.yml up --build --remove-orphans
+            docker-compose -f ./docker/docker-compose.yml up --build --remove-orphans -d
         else
             echo ">> Provided environment not supported"
         fi
