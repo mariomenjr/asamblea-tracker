@@ -3,6 +3,10 @@
 USR_ENV=$1
 COMPOSE=false
 
+export AT_USER=$(whoami)
+export AT_UID=$(id -u)
+export AT_GID=$(id -g)
+
 if [ -z $USR_ENV ]
 then
     echo ">> Please specify either production or development as an environment"
