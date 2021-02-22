@@ -19,7 +19,7 @@ else
         COMPOSE=true
     elif [ $USR_ENV = "development" ]
     then
-        export PORT=3000
+        export PORT=3002
         export DOCKERFILE=Dockerfile.dev
 
         COMPOSE=true
@@ -32,7 +32,7 @@ else
         if [ $COMPOSE = true ]
         then
             # docker-compose -f docker/docker-compose.yml config
-            docker-compose -f ./docker/docker-compose.yml up --build --remove-orphans -d
+            docker-compose -p asamblea-tracker -f ./docker/docker-compose.yml up --build --remove-orphans -d
         else
             echo ">> Provided environment not supported"
         fi
